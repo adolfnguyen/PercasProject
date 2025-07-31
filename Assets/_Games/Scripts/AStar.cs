@@ -11,9 +11,10 @@ public class AStar : MonoBehaviour
     private const int MOVE_DIAGONAL_COST = 14;
 
     public GridMA GridMaster;
-    [SerializeField] Vector2Int StartPos;
-    [SerializeField] Vector2Int EndPos;
-
+    [SerializeField] Vector2Int I_StartPos;
+    [SerializeField] Vector2Int I_EndPos;
+    Vector2Int StartPos;
+    Vector2Int EndPos;
     HashSet<NodePath> Path = new HashSet<NodePath>();
 
     //Danh sách chứa các node chưa kiểm tra và sẽ được kiểm tra.
@@ -43,13 +44,15 @@ public class AStar : MonoBehaviour
                 }
             }
 
+            
+            StartPos = I_StartPos- Vector2Int.one;  
+            EndPos = I_EndPos- Vector2Int.one;
             if (StartPos == EndPos)
             {
                 Debug.Log("Start and End positions are the same.");
                 return;
             }
             ClearColorPath();
-
             var starPos = GridMaster.GetPointInGrid(StartPos);
             var endPos = GridMaster.GetPointInGrid(EndPos);
             if (starPos == null || endPos == null)
@@ -253,7 +256,7 @@ public class AStar : MonoBehaviour
         }
         if (GridMaster.GetPointInGrid(StartPos) != null)
         {
-            GridMaster.GetPointInGrid(StartPos).ObjectMove.color = colorNpc;
+            GridMaster.GetPointInGrid(StartPos ).ObjectMove.color = colorNpc;
         }
     }
     void ClearColorPath()
