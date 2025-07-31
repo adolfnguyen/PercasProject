@@ -275,8 +275,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GridMaster: {fileID: 1401699950}
-  StartPos: {x: 0, y: 0}
-  EndPos: {x: 0, y: 0}
+  I_StartPos: {x: 0, y: 0}
+  I_EndPos: {x: 0, y: 0}
 --- !u!4 &520262541
 Transform:
   m_ObjectHideFlags: 0
@@ -321,8 +321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262e2936548e23342b6e3b3283ed7908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Width: 30
-  Height: 30
+  Width: 20
+  Height: 20
   objectMovePref: {fileID: 3712865184626596491, guid: aa1eb6b6afdaf1d409413512b15d3f84, type: 3}
   holder: {fileID: 488862655}
 --- !u!4 &1401699951
