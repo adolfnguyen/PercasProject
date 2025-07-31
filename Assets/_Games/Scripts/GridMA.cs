@@ -29,7 +29,7 @@ public class GridMA : MonoBehaviour
                 bool walkable = Random.value > 0.2f;
                 node[i, j].walkable = walkable;
                 node[i, j].Parent = null;
-                GameObject objMove = Instantiate(objectMovePref.gameObject, new Vector2(node[i, j].Position.x + worldPoint.x, node[i, j].Position.y+worldPoint.y), Quaternion.identity,holder);
+                GameObject objMove = Instantiate(objectMovePref.gameObject, new Vector2(node[i, j].Position.x + worldPoint.x*2+2f, node[i, j].Position.y+worldPoint.y*2+0.5f), Quaternion.identity,holder);
                 node[i, j].ObjectMove = objMove.transform.GetChild(0).GetComponent<SpriteRenderer>();
                 Color32 color = walkable ? Color.white : Color.gray;
                 node[i, j].ObjectMove.color = color;
